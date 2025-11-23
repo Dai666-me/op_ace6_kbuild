@@ -12,10 +12,16 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
 
-      - name: Set swap to 10G
-        uses: pierotofy/set-swap-space@master
+      - name: Maximize Build Space
+        uses: easimon/maximize-build-space@master
         with:
-          swap-size-gb: 10
+          root-reserve-mb: 8192
+          temp-reserve-mb: 4096
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
 
       - name: Set git config
         run: |
