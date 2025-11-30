@@ -16,7 +16,7 @@ mountify = os.environ.get("mountify")
 BBG = os.environ.get("BBG")
 MSG_TEMPLATE = """
 **New Build Published!**
-#{device}
+#ACE6
 ```Kernel Info
 kernelver: {kernelversion}
 KsuVar: {ksuvar}
