@@ -13,6 +13,8 @@ MESSAGE_THREAD_ID = os.environ.get("MESSAGE_THREAD_ID")
 KSUVAR = os.environ.get("KSUVAR")
 SUSFS = os.environ.get("SUSFS")
 mountify = os.environ.get("mountify")
+zram = os.environ.get("zram")
+hymofs = os.environ.get("hymofs")
 BBG = os.environ.get("BBG")
 MSG_TEMPLATE = """
 **New Build Published!**
@@ -22,8 +24,10 @@ kernelver: {kernelversion}
 KsuVar: {ksuvar}
 KsuVersion: {Ksuver}
 SUSFS: {SUSFS}
+HymoFS: {hymofs}
 BBG: {BBG}
 Mountify support: {mountify}
+lz4+zstd: {zram}
 ```
 Please follow @gki_kernels_xiaoxiaow !
 """.strip()
@@ -37,6 +41,8 @@ def get_caption():
         BBG=BBG,
         SUSFS=SUSFS,
         mountify=mountify,
+        zram=zram,
+        hymofs=hymofs,
     )
     if len(msg) > 1024:
         return f"{KSUVAR} {ksuver} {kernelversion}"
